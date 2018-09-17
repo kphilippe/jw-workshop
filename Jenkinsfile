@@ -9,7 +9,7 @@ pipeline {
     stage('Docker Build') {
       steps {
         container('docker'){
-          sh 'docker build -t dillson/jw-workshop:latest .'
+          sh 'docker build -t krisphilippe/jw-workshop:latest .'
         }
       }
     }
