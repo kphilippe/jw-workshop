@@ -1,3 +1,4 @@
+
 pipeline {
   agent {
     kubernetes {
@@ -29,7 +30,7 @@ pipeline {
           withCredentials([usernamePassword(credentialsId: 'VCS', usernameVariable: 'orgID', passwordVariable: 'apiToken')]) {
             sh "vke account login -t ${env.orgID} -r ${env.apiToken}"
             sh '''
-                 vke cluster merge-kubectl-auth ClusterKP2
+                 vke cluster merge-kubectl-auth KPCluster2
 		 kubectl delete namespace jw-workshop || true
                  sleep 5
                  kubectl create namespace jw-workshop
